@@ -1,0 +1,39 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.sahan.t_mobile"
+    },
+    "jhipsterVersion": "6.8.0",
+    "applicationType": "monolith",
+    "baseName": "t_mobile",
+    "packageName": "com.sahan.t_mobile",
+    "packageFolder": "com/sahan/t_mobile",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "NmYzMTg1NGEzZWI4MmE1ZDU0NzBkMTY1YTNkYjJkNDg5NGZjZWM1YmFhZGY1MmU4NzZkMDk4YzAzNzVkZmVjZTFhMjAyYWE4MzdiOTg3OWJjMzk1OTliNTQwNjBkNzVjN2Y4NjhjNzJmN2FmZTFhZTFkZTg3YzhiNjU3M2QzOTY=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "darkly",
+    "clientThemeVariant": "light",
+    "creationTimestamp": 1588889016104,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "blueprints": []
+  }
+}
