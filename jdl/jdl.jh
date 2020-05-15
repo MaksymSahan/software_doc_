@@ -1,0 +1,50 @@
+entity MobileUser {
+	id Long
+    name String required maxlength(100)
+    surname String required maxlength(100)
+    email String required maxlength(100)
+    phone String unique pattern(/^(\+\d{1,3}[- ]?)?\d{10}$/)
+ 	address String maxlength(100)
+}
+
+entity OrderTariffPlan {
+	id Long
+    name String required maxlength(100)
+    price Double
+}
+
+entity Payment {
+	id Long
+    amount Double
+    transactionProvider String
+}
+
+entity Admin {
+	id Long
+    name String required maxlength(100)
+}
+
+entity TariffPlan {
+	id Long
+	name String required unique maxlength(100)
+ 	description String maxlength(100)
+    internet String
+    calls String
+    sms String
+    price Double
+}
+
+relationship ManyToMany {
+	MobileUser{tariffs} to TariffPlan{users}
+    Admin{whoHelped} to MobileUser{supportedBy}
+    OrderTariffPlan{whoOrdered} to MobileUser{tariffPlanOrder}
+}
+
+relationship OneToMany {
+    Admin{updatedTariffs} to TariffPlan{updatedBy}
+    MobileUser{payments} to Payment{byWho}
+}
+
+filter all 
+paginate all with infinite-scroll
+service all with serviceImpl

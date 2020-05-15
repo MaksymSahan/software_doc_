@@ -1,0 +1,41 @@
+{
+    "name": "Admin",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "100"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "tariffPlan",
+            "otherEntityRelationshipName": "updatedBy",
+            "relationshipName": "updatedTariffs"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "mobileUser",
+            "otherEntityRelationshipName": "supportedBy",
+            "relationshipName": "whoHelped",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20200507221600",
+    "entityTableName": "admin",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <!--
+        Added the constraints for entity Admin.
+    -->
+    <changeSet id="20200507221600-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="admin_id"
+                                 baseTableName="admin_who_helped"
+                                 constraintName="fk_admin_who_helped_admin_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="admin"/>
+
+        <addForeignKeyConstraint baseColumnNames="who_helped_id"
+                                 baseTableName="admin_who_helped"
+                                 constraintName="fk_admin_who_helped_who_helped_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="mobile_user"/>
+        
+    </changeSet>
+</databaseChangeLog>

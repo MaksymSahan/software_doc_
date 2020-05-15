@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="orderTariffPlan">
+            <h2><span>Order Tariff Plan</span> {{ orderTariffPlan.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Name</span></dt>
+                <dd>
+                    <span>{{ orderTariffPlan.name }}</span>
+                </dd>
+                <dt><span>Price</span></dt>
+                <dd>
+                    <span>{{ orderTariffPlan.price }}</span>
+                </dd>
+                <dt><span>Who Ordered</span></dt>
+                <dd>
+                    <span *ngFor="let whoOrdered of orderTariffPlan.whoOrdereds; let last = last">
+                        <a [routerLink]="['/mobile-user', whoOrdered?.id, 'view']">{{ whoOrdered.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/order-tariff-plan', orderTariffPlan.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

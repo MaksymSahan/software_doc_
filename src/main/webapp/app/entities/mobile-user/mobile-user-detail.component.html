@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="mobileUser">
+            <h2><span>Mobile User</span> {{ mobileUser.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Name</span></dt>
+                <dd>
+                    <span>{{ mobileUser.name }}</span>
+                </dd>
+                <dt><span>Surname</span></dt>
+                <dd>
+                    <span>{{ mobileUser.surname }}</span>
+                </dd>
+                <dt><span>Email</span></dt>
+                <dd>
+                    <span>{{ mobileUser.email }}</span>
+                </dd>
+                <dt><span>Phone</span></dt>
+                <dd>
+                    <span>{{ mobileUser.phone }}</span>
+                </dd>
+                <dt><span>Address</span></dt>
+                <dd>
+                    <span>{{ mobileUser.address }}</span>
+                </dd>
+                <dt><span>Tariffs</span></dt>
+                <dd>
+                    <span *ngFor="let tariffs of mobileUser.tariffs; let last = last">
+                        <a [routerLink]="['/tariff-plan', tariffs?.id, 'view']">{{ tariffs.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/mobile-user', mobileUser.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
